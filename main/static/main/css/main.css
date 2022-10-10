@@ -1,59 +1,22 @@
+.form-input {
+    width: 300px;
+    font-size: 16px;
+}
 
-*,*:before,*:after {
-    margin: 0;
+.form-label {
+    display: inline-block;
+    min-width: 150px;
+    vertical-align: top;
+}
+
+.form-error ul {
+    list-style: none;
     padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style-type: none;
+    color: #CC0000;
 }
 
-
-.menu{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+.form-button {
+    min-width: 200px;
+    font-size: 16px;
 }
 
-.logo{
-    display: block;
-    padding: 15px 0px;
-    border-bottom: 2px solid red;
-    
-}
-
-.logo a{
-    
-
-}
-
-.logo:hover{
-    border-bottom-color: blue;
-    
-}
-
-.navigation{
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background-color: burlywood;
-    align-items: center;
-    flex-wrap: wrap;
-
-}
-
-.navigation li{
-    padding: 8px 1px;
-    
-    
-
-}
-
-.navigation li:first-child{
-    padding-left:0;
-}
-.login{
-    
-}

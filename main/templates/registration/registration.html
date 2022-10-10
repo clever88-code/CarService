@@ -4,17 +4,22 @@
 
 {% block body %}
 
-<h2>Login</h2>
-  
-<h2>Register</h2>
 
+
+
+
+<div class="container d-flex justify-content-center align-items-center mx-auto py-4">
+    
 <form method="post">
+    <h1>Регистрация</h1>
     {% csrf_token %}
-    {{form}}
-    <input type="submit" value="Register">
+
+{% for f in form %}
+<p><label class="form-label" for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</p>
+<div class="form-error">{{ f.errors }}</div>
+{% endfor %}
+
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Регистрация</button>
 </form>
-
-<a href="{% url 'login' %}">Back to login</a>
-<a href="{% url 'home' %}">Back to Home</a>
-
+</div>
 {% endblock  %} 

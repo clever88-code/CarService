@@ -1,20 +1,26 @@
 {% extends 'main/general.html' %}
 
-{% block title %}Логин{% endblock %} 
 
 {% block body %}
 
-<h2>Login</h2>
-  
+
+
+<div class="container d-flex justify-content-center align-items-center mx-auto py-4">
 <form method="post">
-  {% csrf_token %}
-  <table>
-    {{ form.as_p }}
-    <tr>
-      <td>&nbsp;</td>
-      <td><input type="submit" value="Submit"></td>
-    </tr>                
-  </table>
+    {% csrf_token %}
+    <h1>Авторизация</h1>
+
+<div class="form-error">{{ form.non_field_errors }}</div>
+
+{% for f in form %}
+<p><label class="form-label" for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</p>
+<div class="form-error">{{ f.errors }}</div>
+{% endfor %}
+
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Войти</button>
 </form>
-{% endblock  %} 
+</div>
+  {% endblock  %} 
+
+
 

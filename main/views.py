@@ -6,6 +6,7 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+from .forms import *
 
 # Create your views here.
 
@@ -17,17 +18,14 @@ def index(request):
 def login(request):
     return render(request, 'main/login.html' )
 
-def admin(request):
-    return HttpResponse ("<h4>тип админка</h4>")
 
 
-class SignUp(CreateView):
-    form_class = UserCreationForm
+class Register(CreateView):
+    form_class = RegisterUserForms
     success_url = reverse_lazy("login")
     template_name = "registration/registration.html"
 
 
-
-
-
-
+class LoginUser(LoginView):
+    form_class = LoginUserForms
+    template_name = 'registration/login.html'
